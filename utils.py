@@ -1,4 +1,6 @@
 import json
+import datetime
+from datetime import datetime
 
 def display_json(api_call, output):
     """Format API output for better readability."""
@@ -27,3 +29,11 @@ def display_text(output):
     print(header)
     print(json.dumps(output, indent=4))
     print(footer)
+
+def timestamp_to_date_iso(timestamp:int)->datetime:
+    
+    return datetime.fromtimestamp(timestamp/1000).isoformat()
+
+def timestamp_to_date(timestamp:int)->datetime:
+    
+    return datetime.fromtimestamp(timestamp/1000)
